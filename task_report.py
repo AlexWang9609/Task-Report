@@ -9,6 +9,7 @@ file_path = os.path.join(BASE_DIR, "AllTasks.csv")
 df_1 = pd.read_csv(file_path)
 
 df_1 = df_1.rename(columns={'Number_of_days_overdue__c': 'duration of task'})
+df_1.dropna(subset=['Task_Category__c'], inplace=True)
 
 owner_mapping = {
     "Nicole De Munck":"005Hs00000CkSZ5IAN",
